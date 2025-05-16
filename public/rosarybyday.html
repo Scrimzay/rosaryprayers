@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rosary Prayers by Weekday</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <h2>Prayers</h2>
+    {{ if .Prayer }}
+        <h2>Audio</h2>
+        <audio controls>
+            <source src="{{ .Prayer }}" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    {{ else }}
+        <p>No audio available for this mystery.</p>
+    {{ end }}
+
+    <br>
+    <h2>Introductory Prayers</h2>
+    <div class="prayer">
+        <h3>In the Name</h3>
+        <p>{{ .InTheName }}</p>
+    </div>
+    <div class="prayer">
+        <h3>Apostles' Creed</h3>
+        <p>{{ .IBelieve }}</p>
+    </div>
+    <div class="prayer">
+        <h3>Our Father</h3>
+        <p>{{ .OurFather }}</p>
+    </div>
+    <div class="prayer">
+        <h3>Hail Mary (Say 3 times)</h3>
+        <p>{{ .HailMary }}</p>
+    </div>
+    <div class="prayer">
+        <h3>Glory Be</h3>
+        <p>{{ .GloryBe }}</p>
+    </div>
+    <div class="prayer">
+        <h3>O My Jesus</h3>
+        <p>{{ .OhMyJesus }}</p>
+    </div>
+
+    <br>
+    <h2>Mysteries</h2>
+    {{ if .Announce1 }}
+        <div class="prayer">
+            <h3>First Mystery: {{ .Announce1 }}</h3>
+            <div class="prayer">
+                <h4>Our Father</h4>
+                <p>{{ .OurFather }}</p>
+            </div>
+            <div class="prayer">
+                <h4>Hail Mary (Say 10 times)</h4>
+                <p>{{ .HailMary }}</p>
+            </div>
+            <div class="prayer">
+                <h4>Glory Be</h4>
+                <p>{{ .GloryBe }}</p>
+            </div>
+            <div class="prayer">
+                <h4>O My Jesus</h4>
+                <p>{{ .OhMyJesus }}</p>
+            </div>
+        </div>
+    {{ end }}
+    {{ if .Announce2 }}
+        <div class="prayer">
+            <h3>Second Mystery: {{ .Announce2 }}</h3>
+            <div class="prayer">
+                <h4>Our Father</h4>
+                <p>{{ .OurFather }}</p>
+            </div>
+            <div class="prayer">
+                <h4>Hail Mary (Say 10 times)</h4>
+                <p>{{ .HailMary }}</p>
+            </div>
+            <div class="prayer">
+                <h4>Glory Be</h4>
+                <p>{{ .GloryBe }}</p>
+            </div>
+            <div class="prayer">
+                <h4>O My Jesus</h4>
+                <p>{{ .OhMyJesus }}</p>
+            </div>
+        </div>
+    {{ end }}
+    {{ if .Announce3 }}
+        <div class="prayer">
+            <h3>Third Mystery: {{ .Announce3 }}</h3>
+            <div class="prayer">
+                <h4>Our Father</h4>
+                <p>{{ .OurFather }}</p>
+            </div>
+            <div class="prayer">
+                <h4>Hail Mary (Say 10 times)</h4>
+                <p>{{ .HailMary }}</p>
+            </div>
+            <div class="prayer">
+                <h4>Glory Be</h4>
+                <p>{{ .GloryBe }}</p>
+            </div>
+            <div class="prayer">
+                <h4>O My Jesus</h4>
+                <p>{{ .OhMyJesus }}</p>
+            </div>
+        </div>
+    {{ end }}
+    {{ if .Announce4 }}
+        <div class="prayer">
+            <h3>Fourth Mystery: {{ .Announce4 }}</h3>
+            <div class="prayer">
+                <h4>Our Father</h4>
+                <p>{{ .OurFather }}</p>
+            </div>
+            <div class="prayer">
+                <h4>Hail Mary (Say 10 times)</h4>
+                <p>{{ .HailMary }}</p>
+            </div>
+            <div class="prayer">
+                <h4>Glory Be</h4>
+                <p>{{ .GloryBe }}</p>
+            </div>
+            <div class="prayer">
+                <h4>O My Jesus</h4>
+                <p>{{ .OhMyJesus }}</p>
+            </div>
+        </div>
+    {{ end }}
+    {{ if .Announce5 }}
+        <div class="prayer">
+            <h3>Fifth Mystery: {{ .Announce5 }}</h3>
+            <div class="prayer">
+                <h4>Our Father</h4>
+                <p>{{ .OurFather }}</p>
+            </div>
+            <div class="prayer">
+                <h4>Hail Mary (Say 10 times)</h4>
+                <p>{{ .HailMary }}</p>
+            </div>
+            <div class="prayer">
+                <h4>Glory Be</h4>
+                <p>{{ .GloryBe }}</p>
+            </div>
+            <div class="prayer">
+                <h4>O My Jesus</h4>
+                <p>{{ .OhMyJesus }}</p>
+            </div>
+        </div>
+    {{ end }}
+
+    <br>
+    <h2>Closing Prayers</h2>
+    <div class="prayer">
+        <h3>Holy Queen</h3>
+        <p>{{ .HolyQueen }}</p>
+    </div>
+    <div class="prayer">
+        <h3>Final Prayer</h3>
+        <p>{{ .FinalPrayer }}</p>
+    </div>
+    <div class="prayer">
+        <h3>In the Name</h3>
+        <p>{{ .InTheName }}</p>
+    </div>
+
+    {{ if .Warning }}
+        <p class="warning">{{ .Warning }}</p>
+        <script>
+            setInterval(() => {
+                document.body.style.opacity = Math.random() * 0.5 + 0.5;
+            }, 200);
+        </script>
+    {{ end }}
+    {{ if .Curse }}
+        <p class="curse">{{ .Curse }}</p>
+    {{ end }}
+
+    <a href="/">Back to Home Page</a>
+</body>
+</html>

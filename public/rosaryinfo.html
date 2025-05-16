@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rosary Prayers for the Day</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <p><strong>ID:</strong> {{ .ID }}</p>
+    <p><strong>Rosary Date:</strong> {{ .RosaryDate }}</p>
+    <p><strong>Rosary Day:</strong> {{ .RosaryDay }}</p>
+    <p><strong>Mystery:</strong> {{ .Mystery }}</p>
+    <p><strong>Season:</strong> {{ .Season }}</p>
+    <p><strong>Current Date:</strong> {{ .CurrentDate }}</p>
+    <p><strong>Prayer:</strong> {{ .Prayer }}</p>
+    {{ if .Prayer }}
+        <audio controls>
+            <source src="{{ .Prayer }}" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    {{ else }}
+        <p>No audio available for this mystery.</p>
+    {{ end }}
+    
+    {{ if .Warning }}
+        <script>
+        setInterval(() => {
+            document.body.style.opacity = Math.random() * 0.5 + 0.5;
+        }, 200);
+        </script>
+    {{ end }}
+    {{ if .Curse }}
+        <p style="color: purple; font-style: italic;">{{ .Curse }}</p>
+    {{ end }}
+</body>
+</html>
