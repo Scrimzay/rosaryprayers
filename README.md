@@ -1,0 +1,1 @@
+simple rosary prayers site, but with a twist of it having a chance to be haunted, meant to show demons trying to corrupt prayer but prayer always winning, backend by me, frontend by deepseek cause i hate frontend
